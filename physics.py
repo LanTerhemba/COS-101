@@ -1,43 +1,16 @@
-def velocity():
-    distance = float(input("Enter distance: "))
-    time = float(input("Enter time: "))
-
-    if time == 0:
-        print("Time can't be zero.")
-    else:
-        v = distance / time
+def velocity(distance, time):
         print("Velocity =", v, "m/s")
 
-def acceleration():
-    final_velocity = float(input("Enter final velocity: "))
-    initial_velocity = float(input("Enter initial velocity: "))
-    time = float(input("Enter time: "))
-
-    if time == 0:
-        print("Time can't' be zero.")
-    else:
-        a = (final_velocity - initial_velocity) / time
+def acceleration(final_velocity, initial_velocity, time):
         print("Acceleration =", a, "m/s²")
 
-def force():
-    mass = float(input("Enter mass: "))
-    acceleration_value = float(input("Enter acceleration: "))
-
-    f = mass * acceleration_value
+def force(mass, acceleration_value):
     print("Force =", f, "N")
 
-def kinetic_energy():
-    mass = float(input("Enter mass: "))
-    velocity_value = float(input("Enter velocity: "))
-
-    ke = 0.5 * mass * velocity_value ** 2
+def kinetic_energy(mass, velocity_value):
     print("Kinetic Energy =", ke, "J")
 
-def momentum():
-    mass = float(input("Enter mass: "))
-    velocity_value = float(input("Enter velocity: "))
-
-    p = mass * velocity_value
+def momentum(mass, velocity_value):
     print("Momentum =", p, "kg m/s")
 
 while True:
@@ -54,19 +27,46 @@ while True:
     
     
     if calculation == "1":
-        velocity()
+        distance = float(input("Enter distance: "))
+        time = float(input("Enter time: "))
+    
+        if time == 0:
+            print("Time can't be zero.")
+        else:
+            v = distance / time
+        velocity(distance, time)
     
     elif calculation == "2":
-        acceleration()
+        final_velocity = float(input("Enter final velocity: "))
+        initial_velocity = float(input("Enter initial velocity: "))
+        time = float(input("Enter time: "))
+    
+        if time == 0:
+            print("Time can't' be zero.")
+        else:
+            a = (final_velocity - initial_velocity) / time
+        acceleration(final_velocity, initial_velocity, time)
     
     elif calculation == "3":
-        force()
+        mass = float(input("Enter mass: "))
+        acceleration_value = float(input("Enter acceleration: "))
+    
+        f = mass * acceleration_value
+        force(mass, acceleration_value)
     
     elif calculation == "4":
-        kinetic_energy()
+        mass = float(input("Enter mass: "))
+        velocity_value = float(input("Enter velocity: "))
     
-    elif calculation == "5":
-        momentum()
+        ke = 0.5 * mass * velocity_value ** 2
+        kinetic_energy(mass, velocity_value)
+    
+    elif calculation == "5": 
+        mass = float(input("Enter mass: "))
+        velocity_value = float(input("Enter velocity: "))
+    
+        p = mass * velocity_value
+        momentum(mass, velocity_value)
     
     elif calculation == "6":
         print("Later now my guy")
